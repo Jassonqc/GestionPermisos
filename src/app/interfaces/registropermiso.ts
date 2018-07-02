@@ -1,5 +1,4 @@
 export class Alumno{
-   // nmropermiso?:number;
     nombre:string;
     codigo:number;
     telefono:number;

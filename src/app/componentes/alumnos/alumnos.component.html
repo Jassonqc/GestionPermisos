@@ -1,10 +1,10 @@
-<div class="card" style="width: 18rem;">
+<div *ngFor="let alumno of alumnosList" class="card" style="width: 18rem;">
   <div class="container-fluid">
 
 
     <div class="row">
       <div class="col-md-6">
-        <p class="h6 my-1">hora</p>
+        <p class="h6 my-1">{{alumno.fecha}}</p>
       </div>
       <div class="col-md-6">
 
@@ -15,8 +15,8 @@
 
   <img class="card-img-top" src="../../../assets/img/batman.png" alt="Card image cap">
   <ul class="list-group list-group-flush">
-    <h5 class="card-title text-center">Nombre_Completo</h5>
-    <li class="list-group-item">Codigo:</li>
+    <h5 class="card-title text-center">{{alumno.nombre}}</h5>
+    <li class="list-group-item">Codigo: {{alumno.codigo}}</li>
     <li class="list-group-item">Telefono:</li>
     <li class="list-group-item">N° Pieza:</li>
     <li class="list-group-item">Permiso de:</li>
