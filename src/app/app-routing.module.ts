@@ -7,7 +7,7 @@ import { AlumnosComponent } from './componentes/alumnos/alumnos.component';
 import { RegistropermisoComponent } from './componentes/registropermiso/registropermiso.component';
 
 const routes: Routes = [
- {path: '', component: LoginComponent},
+ {path: '', component: RegistropermisoComponent},
  {path: 'registro', component: RegistroComponent},
  {path: 'alumnos', component:AlumnosComponent},
  {path: 'registro-permiso', component:RegistropermisoComponent}

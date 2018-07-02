@@ -1,27 +1,30 @@
-<div *ngFor="let alumno of alumnosList" class="card" style="width: 18rem;">
-  <div class="container-fluid">
+<div class="card-columns">
+  <div *ngFor="let alumno of alumnosList; let i = index" class="card" style="width: 18rem;">
+    <div class="container-fluid">
 
 
-    <div class="row">
-      <div class="col-md-6">
-        <p class="h6 my-1">{{alumno.fecha}}</p>
-      </div>
-      <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="h6 my-1">{{alumno.fecha}}</p>
+        </div>
+        <div class="col-md-6">
 
-        <p class="h6 ml-5">n°doc</p>
+          <p class="h6 mr-auto">N° Permiso : {{i +1}}</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <img class="card-img-top" src="../../../assets/img/batman.png" alt="Card image cap">
-  <ul class="list-group list-group-flush">
-    <h5 class="card-title text-center">{{alumno.nombre}}</h5>
-    <li class="list-group-item">Codigo: {{alumno.codigo}}</li>
-    <li class="list-group-item">Telefono:</li>
-    <li class="list-group-item">N° Pieza:</li>
-    <li class="list-group-item">Permiso de:</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link btn btn-outline-danger btn-lg btn-block">Eliminar Permiso</a>
+    <img class="card-img-top" src="../../../assets/img/batman.png" alt="Card image cap">
+    <ul class="list-group list-group-flush">
+      <h5 class="card-title text-center">{{alumno.nombre}}</h5>
+      <li class="list-group-item">Codigo: {{alumno.codigo}}</li>
+      <li class="list-group-item">Telefono: {{alumno.telefono}}</li>
+      <li class="list-group-item">N° Pieza: {{alumno.nmropieza}}</li>
+      <li class="list-group-item">Permiso de: {{alumno.permisode}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link btn btn-outline-danger btn-lg btn-block" (click)="eliminarPermiso(alumno.$key)">
+        <i class="fas fa-trash-alt"></i> Eliminar Permiso</a>
+    </div>
   </div>
 </div>

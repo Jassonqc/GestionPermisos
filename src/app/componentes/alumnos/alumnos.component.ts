@@ -22,13 +22,16 @@ export class AlumnosComponent implements OnInit {
     this.alumnoService.getAlumnos()
       .snapshotChanges()
       .subscribe(item => {
-        this.alumnosList=[];
+        this.alumnosList = [];
         item.forEach(element => {
-          let x =element.payload.toJSON();
+          let x = element.payload.toJSON();
           x["$key"] = element.key;
           this.alumnosList.push(x as Alumno);
         })
       })
   }
 
+  eliminarPermiso($key: string) {
+    this.alumnoService.deleteAlumno($key);
+  }
 }
