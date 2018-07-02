@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 //servicios
 import { AlumnosService } from '../app/servicios/alumnos.service';
 
@@ -34,7 +37,9 @@ import { RegistropermisoComponent } from './componentes/registropermiso/registro
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [AlumnosService],
   bootstrap: [AppComponent]

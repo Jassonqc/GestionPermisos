@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 
 import { Alumno } from '../../interfaces/registropermiso';
+
+
 import { AlumnosService } from '../../servicios/alumnos.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,7 +15,10 @@ import { AlumnosService } from '../../servicios/alumnos.service';
 })
 export class RegistropermisoComponent implements OnInit {
 
-  constructor(private alumnosService:AlumnosService) { }
+  constructor(
+    private alumnosService:AlumnosService,
+    private toast:ToastrService
+  ) { }
 
   ngOnInit() {
     this.alumnosService.getAlumnos();
@@ -22,6 +28,7 @@ export class RegistropermisoComponent implements OnInit {
   guardar(forma:NgForm){
     this.alumnosService.insertAlumno(forma.value);
     this.reset(forma);
+    this.toast.success('','Permiso guardado')
   }
 
   reset(forma?:NgForm){

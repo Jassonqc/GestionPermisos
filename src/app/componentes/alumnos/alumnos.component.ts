@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AlumnosService } from '../../servicios/alumnos.service';
+import { ToastrService } from 'ngx-toastr';
 
 import { Alumno } from '../../interfaces/registropermiso';
 import { element } from 'protractor';
@@ -15,7 +16,8 @@ export class AlumnosComponent implements OnInit {
   alumnosList: Alumno[];
 
   constructor(
-    private alumnoService: AlumnosService
+    private alumnoService: AlumnosService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -33,5 +35,6 @@ export class AlumnosComponent implements OnInit {
 
   eliminarPermiso($key: string) {
     this.alumnoService.deleteAlumno($key);
+    this.toastr.success('', 'Permiso eliminado');
   }
 }
